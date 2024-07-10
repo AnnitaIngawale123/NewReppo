@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <style>
+        body{
+        background-image: url("Images/shop.jpg");
+    }
+    h1{
+        padding: 10px;
+        margin-left: 350px;
+        font-size:40px;
+    }
+     .input1{
+        width: 20%;
+        height: 40px;
+        margin-left: 400px;
+        border: 2px solid black;
+        border-radius:20px;
+        background-color: rgb(229, 226, 221);
+    }
+    .but{
+        margin-left: 400px;
+        width:10%;
+        height:40px;
+        border-radius:20px;
+    }
+    span{
+        height: 300px;
+        width: 30%;
+        color: brown;
+        font-size: 20px;
+    }
+</style>
+    
+    <script type="text/javascript">
+        function validateName()
+{
+   var str=document.getElementById("n").value;
+   var regExp=/^[a-zA-z'']+$/;
+   var result=str.match(regExp);
+   if(result==null)
+   {
+      document.getElementById("s").innerHTML="invalidname...";
+      document.getElementById("s").style.color="red";
+   }
+   else
+    {
+       document.getElementById("s").innerHTML="";
+    }
+}
+function validateEmail()
+{
+  const RegExp=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+   var str=document.getElementById("n1").value;
+   var result=str.match(RegExp);
+   if(result==null)
+   {
+  document.getElementById("s1").innerHTML="invalid email address";
+  document.getElementById("s1").style.color="red";
+}
+else
+{
+  document.getElementById("s1").innerHTML="";
+
+}
+}
+</script>
+</head>
+<body>
+    
+      <h1>Register Here...</h1>
+      <form name="frm"  action="" method="POST">
+        <input type="text" name="name" placeholder="name"  value=''id="n" onkeyup='validateName()' class="input1">
+        <span id="s"></span><br><br/>
+        <input type="text" name="email" placeholder="e-mail" class="input1" value=''id="n1" onkeyup='validateEmail()'>
+        <span id="s1"></span><br><br/>
+        <input type="text" name="password" placeholder="password" class="input1"><br><br/>
+        <input type="submit" name="s" value="register" class="but" >&nbsp;&nbsp;
+        <button><a href="Login.html">Login</a></button> 
+        </form>
+     </body>
+</html>
